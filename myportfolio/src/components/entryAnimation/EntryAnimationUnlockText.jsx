@@ -32,7 +32,7 @@ export default function EntryAnimationUnlockText({
         <>
         {!showUnlock && (<Flex direction="column" gap="md">
             <h2>{"<< "}{text}{" >>"}</h2>
-            <Progress color="orange" value={progressValue} />
+            <Progress color="#ffff85" value={progressValue} />
         </Flex>) }
         {showUnlock &&
         (<Button className={css(styles.unlockButton)} onClick={onHandleAnimation} size="xl" color="#ffff85" radius="xl" >
