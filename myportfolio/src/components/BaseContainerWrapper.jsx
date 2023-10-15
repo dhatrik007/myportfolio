@@ -1,6 +1,6 @@
 import React from "react";
 import BasePageEntryAnimation from "./entryAnimation/BasePageEntryAnimation";
-import { Text } from "@mantine/core";
+import ProfileLandinginterface from "./ProfileLandingInterface";
 
 export default function BaseContainerWrapper() {
     const [entryFlag, setEntryFlag] = React.useState(true)
@@ -11,7 +11,7 @@ export default function BaseContainerWrapper() {
         <div>
             {entryFlag ?
              <BasePageEntryAnimation onHandleAnimation={handleAnimationClosed}/>
-            :<Text>Animation Closed</Text>}
+            :<ProfileLandinginterface/>}
         </div>
     )
 }

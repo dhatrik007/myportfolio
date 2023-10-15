@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Progress, Button } from "@mantine/core";
+import { Progress, Button, Flex } from "@mantine/core";
+import { StyleSheet, css } from "aphrodite";
 
 export default function EntryAnimationUnlockText({
     onHandleAnimation,
@@ -29,11 +30,21 @@ export default function EntryAnimationUnlockText({
 
     return (
         <>
-        {!showUnlock && (<div>
-            <Text>{text}</Text>
-            <Progress color="yellow" value={progressValue} />
-        </div>) }
-        {showUnlock && (<Button onClick={onHandleAnimation}>Click here to unlock</Button>)}
+        {!showUnlock && (<Flex direction="column" gap="md">
+            <h2>{"<< "}{text}{" >>"}</h2>
+            <Progress color="orange" value={progressValue} />
+        </Flex>) }
+        {showUnlock &&
+        (<Button className={css(styles.unlockButton)} onClick={onHandleAnimation} size="xl" color="#ffff85" radius="xl" >
+            Click here to unlock
+        </Button>)}
         </>
     )
 }
+
+const styles = StyleSheet.create({
+    unlockButton: {
+        fontSize: "24px",
+        color: "black"
+    }
+})

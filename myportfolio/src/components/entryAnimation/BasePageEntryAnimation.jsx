@@ -5,12 +5,11 @@ import EntryAnimationUnlockText from "./EntryAnimationUnlockText";
 export default function BasePageEntryAnimation({
     onHandleAnimation
 }) {
-    let targetText = ["ArrowUp", "Enter", "Tab", "Enter"];
     return (
         <div className={css(styles.mainContainer)}>
             <Flex direction="column" gap="md">
                 <h1 className={css(styles.headerContainer)}>To unlock this website press following:</h1>
-                <EntryAnimationUnlockText onHandleAnimation={onHandleAnimation} targetText={targetText}/>
+                <EntryAnimationUnlockText onHandleAnimation={onHandleAnimation}/>
             </Flex>
         </div>
     )
@@ -26,6 +25,8 @@ const styles = StyleSheet.create({
         height: "100vh",
     },
     headerContainer: {
-        fontFamily: "Papyrus"
+        fontFamily: "Papyrus",
+        fontSize: "56px",
+        color: "white"
     }
 })
