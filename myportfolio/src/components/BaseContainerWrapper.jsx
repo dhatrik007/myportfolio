@@ -1,5 +1,5 @@
 import React from "react";
-import BasePageEntryAnimation from "./BasePageEntryAnimation";
+import BasePageEntryAnimation from "./entryAnimation/BasePageEntryAnimation";
 import { Text } from "@mantine/core";
 
 export default function BaseContainerWrapper() {
