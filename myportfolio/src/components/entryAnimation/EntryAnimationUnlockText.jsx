@@ -38,6 +38,7 @@ export default function EntryAnimationUnlockText({
         (<Button className={css(styles.unlockButton)} onClick={onHandleAnimation} size="xl" color="#ffff85" radius="xl" >
             Click here to unlock
         </Button>)}
+        {/** TODO: add loadingOverlay */}
         </>
     )
 }
