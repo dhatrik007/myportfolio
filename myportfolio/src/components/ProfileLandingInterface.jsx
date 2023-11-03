@@ -5,14 +5,38 @@ import { Card, Text } from "@mantine/core";
 import Temenos from "../assets/temenos.png";
 import Walmart from "../assets/walmart.svg";
 import Flexport from "../assets/flexport.png";
+import Typewriter from "typewriter-effect";
+import TestimonialCarousel from "./TestimonialCarousel";
+
 
 export default function ProfileLandinginterface() {
+    const visitorCount = 1;
+    const message = `Hello visitor #${visitorCount}!`;
     return (
         <div className={css(styles.mainContainer)}>
+            <div className={css(styles.headerContainer)}>
+                <div align="left"><Typewriter onInit={(obj) => {
+                        obj
+                            .typeString(message)
+                            .pauseFor(3000)
+                            .deleteAll()
+                            .typeString("How are you doing!")
+                            .pauseFor(3000)
+                            .deleteAll()
+                            .typeString("Welcome to my world!")
+                            .pauseFor(3000)
+                            .start()
+                    }}
+                    options={{
+                        loop: true,
+                    }}
+                    />
+                </div>
+            </div>
             <div className={css(styles.welcomeContainer)}>
                 <WelcomeBanner/>
             </div>
-            <div className={css(styles.headerContainer)}>My Recent Experiences</div>
+            <div className={css(styles.experiencesHeaderContainer)}>My Recent Experiences</div>
             <Text ff="sans-serif" size="xl" > Here are a few past professional experiences. Want to know more? Email me.</Text>
             <div className={css(styles.experiencesContainer)}>
                 <div className={css(styles.cardContainer)}>
@@ -49,6 +73,9 @@ export default function ProfileLandinginterface() {
 
                 </div>
             </div>
+            <div className={css(styles.carouselContainer)}>
+                <TestimonialCarousel/>
+            </div>
             <div className={css(styles.carousalContainer)}>
                 {/** TODO: rest of the page */}
             </div>
@@ -63,11 +90,35 @@ const styles = StyleSheet.create({
         height: "100vh",
         flexDirection: "column",
     },
+    headerContainer: {
+        minHeight: "400px",
+        paddingLeft: "48px",
+        paddingRight: "48px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        alignItems:"center",
+        overflow: "hidden",
+        fontSize: "56px",
+        fontWeight: "bold",
+        fontFamily: "eurostile, sans-serif",
+        color: "white",
+    },
+    carouselContainer: {
+        display: "flex",
+        padding: "48px",
+        marginTop: "72px",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        width: "100%",
+        background: "#ffff85",
+        borderRadius: "50px 50px 0px 0px",
+    },
     welcomeContainer: {
         display: "flex",
-        marginTop: "400px",
         background: "#ffff85",
-        height: "500px",
+        minHeight: "500px",
         width: "100%",
         borderRadius: "50px 50px 0px 0px",
     },
@@ -96,7 +147,7 @@ const styles = StyleSheet.create({
         fontSize: "14px",
         fontFamily: "europa, sans-serif"
     },
-    headerContainer: {
+    experiencesHeaderContainer: {
         color: "White",
         fontSize: "32px",
         fontFamily: "europa, sans-serif",
