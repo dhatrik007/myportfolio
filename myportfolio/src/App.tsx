@@ -3,7 +3,7 @@ import BaseContainerWrapper from './components/BaseContainerWrapper';
 import BaseLandingInterface from './components/BaseLandingInterface';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Undefined from './components/Undefined';
-import PsEditor from './PSEditor/PsEditor';
+import PsEditor from './pseditor/PsEditor';
 
 
 function App() {
