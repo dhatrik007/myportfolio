@@ -20,6 +20,17 @@ export function getDefaultLayout(): Layout[] {
     });
     return cellArray
 }
+export function getDefaultLayoutCell(): Layout {
+    const cell : Layout = {
+        id: uuid(),
+        isHorizontal: false,
+        isVertical: false,
+        cells: [],
+        data: null
+    }
+    return cell
+}
+
 export function updateLayoutData(layoutData: Layout[], id: string, imageSrc: string | null): Layout[] {
     return layoutData.map((layout: Layout) => {
       if (layout.id === id) {

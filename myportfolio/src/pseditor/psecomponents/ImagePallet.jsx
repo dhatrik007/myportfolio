@@ -3,7 +3,7 @@ import { Image } from "@mantine/core";
 
 export default function ImagePallet() {
     const handleDragStart = (event, src) => {
-        event.dataTransfer.setData('text/plain', src.toString() );
+        event.dataTransfer.setData('text/plain', `${src.toString()}:1` );
     };
     const imageNames = Array.from({ length: 20 }, (_, index) => `image-${index + 1}.jpg`);
     return (

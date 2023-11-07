@@ -24,4 +24,19 @@ export const LayoutContextProvider: React.FC<MyContextProviderProps> = ({ childr
   );
 };
 
+type ListData = {
+    listItems: string | null,
+    setListData: React.Dispatch<React.SetStateAction<string | null>>;
+}
+export const LayoutListStorageContext = React.createContext<ListData>({listItems: null, setListData: () => {} })
 
+export const LayoutListStorageContextProvider: React.FC<MyContextProviderProps> = ({ children }) => {
+    const listData = localStorage.getItem("listItemData")
+    const [listItems, setListData] = React.useState<string | null>(listData);
+
+    return (
+      <LayoutListStorageContext.Provider value={{ listItems, setListData }}>
+        {children}
+      </LayoutListStorageContext.Provider>
+    );
+  };

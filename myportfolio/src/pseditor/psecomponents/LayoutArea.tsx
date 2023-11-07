@@ -2,9 +2,8 @@ import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import CellRenderer from "./CellRenderer";
 import {LayoutContext} from "./LayoutContext"
-type Props ={
-}
-export default function LayoutArea(_: Props) {
+
+export default function LayoutArea() {
     const {layoutData} = React.useContext(LayoutContext)
     const layoutRows = layoutData.map((cell) => {
         return (
@@ -30,8 +29,8 @@ const styles = StyleSheet.create({
     },
     cellContainer: {
         display: "flex",
-        height: "450px",
-        width: "100%",
+        height: "800px",
+        width: "800px",
         margin: "4px"
     }
 })

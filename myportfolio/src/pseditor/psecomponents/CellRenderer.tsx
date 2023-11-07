@@ -11,12 +11,16 @@ type Prop ={
 export default function CellRenderer(prop: Prop) {
     const {cellData} = prop;
     const {layoutData, setLayoutData} = React.useContext(LayoutContext);
-    const handleDrop = (event: React.DragEvent<HTMLElement>) => {
+    const handleDrop = (event: React.DragEvent<HTMLElement>, previousDataSrc: string | null | undefined) => {
         event.stopPropagation();
-        const imageSrc = event.dataTransfer.getData('text/plain');
+        const [imageSrc, sourceElementId] = event.dataTransfer.getData('text/plain').split(":");
         const id = event.currentTarget.getAttribute("id");
-        if(imageSrc && id !== null) {
-            const updatedData = updateLayoutData(layoutData, id, imageSrc)
+        if(previousDataSrc &&  previousDataSrc !== null && id) {
+            const updatedTargetData = updateLayoutData(layoutData, sourceElementId, previousDataSrc )
+            const updatedPreviousSrc = updateLayoutData(updatedTargetData, id, imageSrc ==="false"? null: imageSrc)
+            setLayoutData(updatedPreviousSrc)
+        } else if(id){
+            const updatedData = updateLayoutData(layoutData, id, imageSrc === "false"? null: imageSrc)
             setLayoutData(updatedData)
         }
     };
@@ -46,13 +50,14 @@ export default function CellRenderer(prop: Prop) {
         }
 
     }
+    const handleDragStart = (event: React.DragEvent<HTMLElement>, src: string, id: string) => {
+        event.dataTransfer.setData('text/plain', `${src.toString()}:${id.toString()}` );
+    };
     if(cellData.cells.length > 0) {
         const children = cellData.cells.map((cellData) => (<CellRenderer key={cellData.id} cellData={cellData} cellId={cellData.id}/>))
         return(
             <div
                 id={cellData.id}
-                onDrop={handleDrop}
-                onDragOver={(e) => {e.preventDefault()}}
                 className={css(styles.cellContainer, cellData.isHorizontal && styles.horizontalSplitContainer)}
             >
                 {children}
@@ -67,12 +72,14 @@ export default function CellRenderer(prop: Prop) {
         return(
             <div
                 id={cellData.id}
-                onDrop={handleDrop}
+                onDrop={(e) => handleDrop(e, cellData.data)}
                 onDragOver={(e) => {e.preventDefault()}}
+                onDragStart={(e) => handleDragStart(e, cellData.data ?? "false", cellData.id)}
+                draggable
                 style={backgroundStyle}
                 className={css(styles.cellContainer, styles.cellActionContainer)}
             >
-                {cellData.data && <Button
+                {cellData.data  && <Button
                     size={"compact-xs"}
                     variant="filled"
                     color="red"

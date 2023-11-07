@@ -1,12 +1,18 @@
 import { StyleSheet, css } from "aphrodite";
 import ActionArea from "./psecomponents/ActionArea";
 import EditorArea from "./psecomponents/EditorArea";
+import {LayoutContextProvider, LayoutListStorageContextProvider } from "./psecomponents/LayoutContext";
+
 export default function PsEditor() {
     return(
     <div className={css(styles.mainContainer)}>
         <div  className={css(styles.editorContainer)} >
-            <ActionArea/>
-            <EditorArea/>
+            <LayoutContextProvider>
+                <LayoutListStorageContextProvider>
+                    <ActionArea/>
+                    <EditorArea/>
+                </LayoutListStorageContextProvider>
+            </LayoutContextProvider>
         </div>
     </div>
     )
