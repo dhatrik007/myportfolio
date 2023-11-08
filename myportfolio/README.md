@@ -19,6 +19,10 @@ previously saved layouts.
 9. Selecting a previously saved layout from the drop-down and clicking “Load” will replace
 the contents of the layout area with the saved layout.
 
+<img width="530" alt="Screenshot 2023-11-07 at 9 06 14 PM" src="https://github.com/dhatrik007/myportfolio/assets/89943780/67e5a68e-f5eb-4f66-93a3-79fbaf523f22">
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
