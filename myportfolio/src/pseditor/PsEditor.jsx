@@ -3,9 +3,16 @@ import ActionArea from "./psecomponents/ActionArea";
 import EditorArea from "./psecomponents/EditorArea";
 import {LayoutContextProvider, LayoutListStorageContextProvider } from "./psecomponents/LayoutContext";
 
+/**
+ * @description
+ * Hi team, This is the entry point / landing interface for the Visual editor.
+ * Happy debugging!!
+ */
+
 export default function PsEditor() {
     return(
     <div className={css(styles.mainContainer)}>
+        <h1>Predict Spring's Visual Editor JS Challenge</h1>
         <div  className={css(styles.editorContainer)} >
             <LayoutContextProvider>
                 <LayoutListStorageContextProvider>
@@ -15,7 +22,7 @@ export default function PsEditor() {
             </LayoutContextProvider>
         </div>
     </div>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -25,12 +32,12 @@ const styles = StyleSheet.create({
         height: "100vh",
         flexDirection: "column",
         alignItems:"center",
-        marginTop: "72px"
+        marginTop: "72px",
     },
     editorContainer: {
         display: "flex",
         width: "1000px",
         flexDirection: "column",
-        background: "white"
+        background: "white",
     },
 })

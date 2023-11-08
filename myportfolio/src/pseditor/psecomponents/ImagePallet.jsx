@@ -1,13 +1,27 @@
 import { StyleSheet, css } from "aphrodite";
-import { Image } from "@mantine/core";
+import { Image, Text } from "@mantine/core";
+
+/**
+ * @description
+ * This component responsible for holding all images to be dragged.
+ * checkout Public folding for ImagePalletAssets for images
+ */
 
 export default function ImagePallet() {
+
+    /**
+     * setting image source to dataTransfer object to receive it
+     * in target's drop events
+     */
     const handleDragStart = (event, src) => {
         event.dataTransfer.setData('text/plain', `${src.toString()}:1` );
     };
-    const imageNames = Array.from({ length: 20 }, (_, index) => `image-${index + 1}.jpg`);
+
+    const imageCount = 20;
+    const imageNames = Array.from({ length: imageCount }, (_, index) => `image-${index + 1}.jpg`);
     return (
         <div className={css(styles.palletContainer)}>
+            <Text fw={"bold"} c={"black"} >Image Pallet</Text>
             {imageNames.map((fileName, index) => (
                 <Image
                     className={css(styles.imageStyles)}
