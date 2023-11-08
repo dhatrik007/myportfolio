@@ -8,13 +8,13 @@ export default function BaseLandingInterface() {
         <div className={css(styles.mainContainer)}>
             <Flex gap={72} direction={"column"}>
                 <Anchor href="/home" >
-                    <Button size="xl" leftSection={<IconPhoto size={24} />} variant="light">Portfolio</Button>
+                    <Button size="xl" leftSection={<IconPhoto size={24} />} variant="light">Portfolio (WIP)</Button>
                 </Anchor>
                 <Anchor href={resumeURL} download >
                     <Button size="xl" rightSection={<IconDownload size={24} />} variant="gradient">Download Resume</Button>
                 </Anchor>
                 <Anchor href="/pseditor" >
-                    <Button size="xl" rightSection={<IconArrowRight size={24} />} variant="outline">Predict Spring Visual Editor (WIP)</Button>
+                    <Button size="xl" rightSection={<IconArrowRight size={24} />} variant="outline">Predict Spring Visual Editor</Button>
                 </Anchor>
             </Flex>
         </div>
