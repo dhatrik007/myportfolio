@@ -45,8 +45,8 @@ export default function ActionArea() {
     const saveCurrentTemplate = () => {
         localStorage.setItem(value, JSON.stringify(layoutData))
         notifications.show({
-            title: 'Template loaded',
-            message: `Hey there, your selected template "${value}" loaded.`,
+            title: 'Template Saved',
+            message: 'Hey there, your changes saved to current template',
         })
     }
     return (
