@@ -62,10 +62,10 @@ export default function ActionArea() {
      * Responsible for saving layout to selected layout
      */
     const saveCurrentTemplate = () => {
-        localStorage.setItem(value, JSON.stringify(layoutData));
+        localStorage.setItem(templateOption, JSON.stringify(layoutData));
         notifications.show({
             title: 'Template Saved',
-            message: `Hey there, your changes saved to current template "${value}"`,
+            message: `Hey there, your changes saved to current template "${templateOption}"`,
         });
     };
 
