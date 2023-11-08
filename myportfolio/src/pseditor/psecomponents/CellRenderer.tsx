@@ -90,7 +90,7 @@ export default function CellRenderer(prop: Prop) {
             >
                 {children}
             </div>
-        )
+        );
     } else {
         const backgroundSrc = cellData.data || '../assets/dragbackground.png';
         const backgroundStyle = {
@@ -140,13 +140,13 @@ export default function CellRenderer(prop: Prop) {
                     </Popover.Dropdown>
                 </Popover>
             </div>
-        )
+        );
     }
 }
 
 const styles = StyleSheet.create({
     horizontalSplitContainer: {
-        flexDirection: "column"
+        flexDirection: "column",
     },
     cellContainer: {
         display: "flex",
@@ -162,6 +162,6 @@ const styles = StyleSheet.create({
         alignContent:"flex-end",
         justifyContent:"space-between",
         paddingRight:"2px",
-        border:"1px solid black"
+        border:"1px solid black",
     }
 })

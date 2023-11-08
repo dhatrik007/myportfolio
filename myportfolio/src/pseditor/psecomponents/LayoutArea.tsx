@@ -17,14 +17,14 @@ export default function LayoutArea() {
             <div id={cell.id} key={cell.id} className={css(styles.mainCellContainer)}>
                 <CellRenderer cellData={cell}/>
             </div>
-        )
+        );
     });
     return (
     <div className={css(styles.layoutContainer)}>
         <Text fw={"bold"} c={"black"}>Layout Area</Text>
         {layoutRows}
     </div>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

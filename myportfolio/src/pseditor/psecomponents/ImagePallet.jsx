@@ -14,7 +14,7 @@ export default function ImagePallet() {
      * in target's drop events
      */
     const handleDragStart = (event, src) => {
-        event.dataTransfer.setData('text/plain', `${src.toString()}:1` );
+        event.dataTransfer.setData('text/plain', `${src.toString()}:1`);
     };
 
     const imageCount = 20;
@@ -31,7 +31,7 @@ export default function ImagePallet() {
                     onDragStart={(e) => handleDragStart(e, `../imagePalletAssets/${fileName}`)}/>
             ))}
         </div>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
         width: "200px",
         flexDirection: "column",
         alignItems:"center",
-        padding:"4px"
+        padding:"4px",
     },
     imageStyles: {
-        padding:"4px"
+        padding:"4px",
     }
 })
