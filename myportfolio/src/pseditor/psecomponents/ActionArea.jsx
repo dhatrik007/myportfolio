@@ -1,8 +1,9 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import { useDisclosure } from '@mantine/hooks';
-import { Button, Flex, Select, Modal, TextInput } from "@mantine/core";
+import { Button, Select, Modal, TextInput } from "@mantine/core";
 import { LayoutContext, LayoutListStorageContext} from "./LayoutContext";
+import { notifications } from '@mantine/notifications';
 import { getDefaultLayoutCell } from "../Utils";
 
 export default function ActionArea() {
@@ -25,21 +26,35 @@ export default function ActionArea() {
         localStorage.setItem(value, JSON.stringify(layoutData) )
         setTemplateOption(value)
         close();
+        notifications.show({
+            title: 'Template Saved',
+            message: `Hey there, your current layout saved with the name "${value}".`,
+        })
     }
     const handleLoadSavedTemplate = (selectedItemName) => {
         const savedTemplateData = localStorage.getItem(selectedItemName)
         setTemplateOption(selectedItemName)
         setLayoutData(JSON.parse(savedTemplateData))
+        setValue(selectedItemName)
+        notifications.show({
+            title: 'Template loaded',
+            message: `Hey there, your selected template "${selectedItemName}" loaded.`,
+        })
     }
 
     const saveCurrentTemplate = () => {
         localStorage.setItem(value, JSON.stringify(layoutData))
+        notifications.show({
+            title: 'Template loaded',
+            message: `Hey there, your selected template "${value}" loaded.`,
+        })
     }
     return (
         <div className={css(styles.actionAreaContainer)}>
             <Button variant="gradient" onClick={handleNewCell}>Add new cell</Button>
             <Select
                 searchable
+                allowDeselect={false}
                 label="Select template to load"
                 onOptionSubmit={handleLoadSavedTemplate}
                 defaultValue={templateOption}
