@@ -8,7 +8,7 @@ export default function BaseLandingInterface() {
         <div className={css(styles.mainContainer)}>
             <Flex gap={72} direction={"column"}>
                 <Anchor href="/home" >
-                    <Button size="xl" leftSection={<IconPhoto size={24} />} variant="light">Portfolio (WIP)</Button>
+                    <Button size="xl" leftSection={<IconPhoto size={24} />} variant="light">My Portfolio</Button>
                 </Anchor>
                 <Anchor href={resumeURL} download >
                     <Button size="xl" rightSection={<IconDownload size={24} />} variant="gradient">Download Resume</Button>

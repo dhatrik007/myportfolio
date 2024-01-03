@@ -8,7 +8,7 @@ export default function WelcomeBanner() {
     const proSum2 = "My expertise extends to multiple programming languages and tools, empowering me to take on a wide range of challenging projects and deliver robust, scalable solutions. Throughout my career, I've honed my ability to collaborate seamlessly with cross-functional teams, demonstrating strong problem-solving skills, and a knack for navigating complex software development landscapes."
     const prosum3 = "I'm deeply committed to ongoing learning and staying up-to-date with emerging technologies and industry best practices. I'm enthusiastic about embracing fresh challenges and eager to make a meaningful contribution to projects that demand a harmonious blend of creativity and technical excellence.";
     return (
-        <Flex justify="space-around">
+        <Flex justify="space-around" align={"flex-end"}>
             <div className={css(styles.imageContainer)}>
                 <img src={Subject} alt="profileImage"/>
             </div>
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
+        height: "100%",
         paddingRight: "48px",
     }
 })

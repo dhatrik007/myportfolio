@@ -1,7 +1,7 @@
 import React from "react"
 import { StyleSheet, css } from "aphrodite";
 import { Carousel } from '@mantine/carousel';
-import { Text } from "@mantine/core";
+import { Text, Flex } from "@mantine/core";
 
 
 export default function TestimonialCarousel() {
@@ -24,20 +24,25 @@ export default function TestimonialCarousel() {
     ]
     const slides = personData.map((item) => (
         <Carousel.Slide key={item.name}>
-        <div  className={css(styles.textContainer)}>
-            <div className={css(styles.textAreaContainer)}>
+            <Flex direction={"column"} align={"center"} justify={"center"}>
                 <Text size="md" fs={"italic"} c="white" ff="europa, sans-serif">{`"${item.testimony}"`}</Text>
                 <Text size="lg" c="white" ff="europa, sans-serif">{`- ${item.name}, ${item.role}`}</Text>
-            </div>
-        </div>
+            </Flex>
         </Carousel.Slide>
     ))
 
     return (
         <div className={css(styles.mainContainer)}>
-        <Carousel loop withIndicators height={250} controlSize={40} slideGap="xl" controlsOffset="xl"  >
-            {slides}
-        </Carousel>
+            <Carousel 
+                className={css(styles.carouselContainer)} 
+                withIndicators 
+                height={250} 
+                controlSize={80} 
+                slideGap="xl" 
+                controlsOffset="xl" 
+                slideSize={"70%"} loop >
+                {slides}
+            </Carousel>
         </div>
     )
 }
@@ -58,6 +63,8 @@ const styles = StyleSheet.create({
     },
     mainContainer: {
         display: "flex",
-        width: "70%"
-    }
+        width: "100%",
+        justifyContent: "center"
+    },
+
 })

@@ -5,9 +5,9 @@ import { StyleSheet, css } from "aphrodite";
 const links = [
   { link: '/', label: 'Home', color:"blue" },
   { link: '/pricing', label: 'Resume', color: "green" },
-  { link: '/learn', label: 'GitHub', color: "white", icon: <IconBrandGithub/> },
-  { link: '/community', label: 'LinkedIn', color: "blue", icon: <IconBrandLinkedin/> },
-  { link: "/Instagram", label: 'Instagram', color: "red", icon: <IconBrandInstagram/>},
+  { link: 'https://github.com/dhatrik007', label: 'GitHub', color: "#ffffff", icon: <IconBrandGithub/> },
+  { link: 'https://www.linkedin.com/in/ndhatrik/', label: 'LinkedIn', color: "blue", icon: <IconBrandLinkedin/> },
+  { link: 'https://www.instagram.com/_nikhil.kumar.dhatrik_/', label: 'Instagram', color: "red", icon: <IconBrandInstagram/>},
 ];
 
 export default function Header() {
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: "22px",
         color: "white",
-        textShadow:     "3px 3px 2px #000",
+        textShadow: "2px 3px 10px #000",
     },
     marginTopContainer: {
         marginTop: "20px"

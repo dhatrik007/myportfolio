@@ -115,9 +115,11 @@ const styles = StyleSheet.create({
     mainContainer: {
         display: "flex",
         width: "100%",
-        height: "100vh",
+        height: "100%",
         flexDirection: "column",
-        alignItems:"center"
+        alignItems:"center",
+        backgroundImage: `url("../assets/bg.jpg")`,
+        backgroundPosition: "center"
     },
     headerContainer: {
         minHeight: "200px",
