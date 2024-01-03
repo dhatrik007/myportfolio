@@ -1,19 +1,27 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import WelcomeBanner from "./WelcomeBanner";
-import { Card, Text } from "@mantine/core";
+import { Card, Flex, Text } from "@mantine/core";
 import Temenos from "../assets/temenos.png";
 import Walmart from "../assets/walmart.svg";
 import Flexport from "../assets/flexport.png";
 import Typewriter from "typewriter-effect";
 import TestimonialCarousel from "./TestimonialCarousel";
+import SkillsCardContainer from "./SkillCardContainer";
+import Header from "./Header";
+import GetInTouchSimple from "./GetInTouchSimple";
 
 
 export default function ProfileLandinginterface() {
     const visitorCount = 1;
     const message = `Hello visitor #${visitorCount}!`;
+    const frontendSkills = ["HTML5", "CSS3", "JavaScript", "ReactJS", "Typescript", "GraphQL", "Redux", "NextJS", "AngularJS", "React-native", "Vue", "Yarn", "Monorepo", "Bootstrap",]
+    const backendSkills = ["JAVA", "Kotlin", "Ruby on Rails", "python", "NodeJS", "ExpressJS", "Spring Boot", "REST"]
+    const databases = ["PostgreSQL", "MongoDB", "Nosql", "SQlite", "Redis"]
+    const devopsSkills = ["GIT", "Docker", "Jenkins", "IntelliJ", "Sentry", "Datadog", "Atlassian"]
     return (
         <div className={css(styles.mainContainer)}>
+            <Header/>
             <div className={css(styles.headerContainer)}>
                 <div align="left"><Typewriter onInit={(obj) => {
                         obj
@@ -36,11 +44,11 @@ export default function ProfileLandinginterface() {
             <div className={css(styles.welcomeContainer)}>
                 <WelcomeBanner/>
             </div>
-            <div className={css(styles.experiencesHeaderContainer)}>My Recent Experiences</div>
+            <div className={css(styles.experiencesHeaderContainer, styles.textColorWhite)}>My Recent Experiences</div>
             <Text ff="sans-serif" size="xl" > Here are a few past professional experiences. Want to know more? Email me.</Text>
-            <div className={css(styles.experiencesContainer)}>
+            <Flex gap={48} className={css(styles.experiencesContainer)}>
                 <div className={css(styles.cardContainer)}>
-                    <Card withBorder radius="lg"shadow="xl" >
+                    <Card >
                         <Card.Section >
                             <img className={css(styles.imageContainer)} alt="Flexport" src={Flexport} />
                         </Card.Section>
@@ -50,7 +58,7 @@ export default function ProfileLandinginterface() {
                     </Card>
                 </div>
                 <div className={css(styles.cardContainer)}>
-                    <Card withBorder radius="lg">
+                    <Card>
                         <Card.Section>
                             <img className={css(styles.imageContainer)} alt="temenos" src={Temenos}/>
                         </Card.Section>
@@ -60,7 +68,7 @@ export default function ProfileLandinginterface() {
                     </Card>
                 </div>
                 <div className={css(styles.cardContainer)}>
-                    <Card withBorder radius="lg">
+                    <Card >
                         <Card.Section>
                             <img className={css(styles.imageContainer)} alt="walmart" src={Walmart}/>
                         </Card.Section>
@@ -72,12 +80,32 @@ export default function ProfileLandinginterface() {
                     </Card>
 
                 </div>
+            </Flex>
+            <div className={css(styles.skillsContainer)}>
+                <Flex direction={"column"} align="center">
+                    <div className={css(styles.experiencesHeaderContainer, styles.textColorBlack)}>What I know?</div>
+                    <Text ff="sans-serif" size="xl" c="#494F55" > Below are the key skills accquired throughout my professional journey.</Text>
+                    <Flex gap={150} className={css(styles.experiencesContainer)}>
+                        <div className={css(styles.skillsCardContainer)}>
+                            <SkillsCardContainer header="Frontend" data={frontendSkills}/>
+                        </div>
+                        <div className={css(styles.skillsCardContainer)}>
+                            <SkillsCardContainer header="Backend" data={backendSkills}/>
+                        </div>
+                        <div className={css(styles.skillsCardContainer)}>
+                            <SkillsCardContainer header="Databases" data={databases}/>
+                        </div>
+                        <div className={css(styles.skillsCardContainer)}>
+                            <SkillsCardContainer header="Devops and tools" data={devopsSkills}/>
+                        </div>
+                    </Flex>
+                </Flex>
             </div>
-            <div className={css(styles.carouselContainer)}>
+            <div className={css(styles.testimonialContainer)}>
                 <TestimonialCarousel/>
             </div>
-            <div className={css(styles.carousalContainer)}>
-                {/** TODO: rest of the page */}
+            <div className={css(styles.contactForm)}>
+                <GetInTouchSimple/>
             </div>
         </div>
     )
@@ -89,9 +117,10 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100vh",
         flexDirection: "column",
+        alignItems:"center"
     },
     headerContainer: {
-        minHeight: "400px",
+        minHeight: "200px",
         paddingLeft: "48px",
         paddingRight: "48px",
         display: "flex",
@@ -104,16 +133,31 @@ const styles = StyleSheet.create({
         fontFamily: "eurostile, sans-serif",
         color: "white",
     },
-    carouselContainer: {
+    skillsContainer: {
         display: "flex",
         padding: "48px",
         marginTop: "72px",
         flexDirection: "column",
-        justifyContent: "flex-end",
+        justifyContent: "center",
         alignItems: "center",
         width: "100%",
         background: "#ffff85",
         borderRadius: "50px 50px 0px 0px",
+    },
+    contactForm: {
+        display: "flex",
+        padding: "48px",
+        marginTop: "72px",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        background: "#ffff85",
+        borderRadius: "50px 50px 0px 0px",
+    },
+    skillsCardContainer: {
+        width: "200px",
+        height:"250px",
     },
     welcomeContainer: {
         display: "flex",
@@ -123,8 +167,6 @@ const styles = StyleSheet.create({
         borderRadius: "50px 50px 0px 0px",
     },
     experiencesContainer: {
-        display: "flex",
-        justifyContent: "space-evenly",
         marginTop: "72px",
     },
     imageContainer: {
@@ -140,6 +182,9 @@ const styles = StyleSheet.create({
     cardContainer: {
         width: "500px",
         color:"white",
+        borderRadius:"20px 20px 0px 0px",
+        overflow:"hidden",
+        boxShadow:"0px 15px 10px white"
     },
     cardTextContainer: {
         padding: "20px",
@@ -148,13 +193,23 @@ const styles = StyleSheet.create({
         fontFamily: "europa, sans-serif"
     },
     experiencesHeaderContainer: {
-        color: "White",
         fontSize: "32px",
         fontFamily: "europa, sans-serif",
         fontWeight: "bold",
-        marginTop: "72px"
+        marginTop: "72px",
+        display:"flex",
+        justifyContent: "center"
     },
-    carousalContainer: {
-        marginTop: "72px"
+    textColorWhite: {
+        color:"white",
+    },
+    textColorBlack: {
+        color:"black",
+    },
+    testimonialContainer: {
+        marginTop: "72px",
+        display:"flex",
+        alignItems:"center",
+        flexDirection:"column"
     }
 })

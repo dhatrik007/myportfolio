@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <MantineProvider defaultColorScheme="dark">
+      <MantineProvider defaultColorScheme='dark' >
         <Notifications />
         <App />
       </MantineProvider>

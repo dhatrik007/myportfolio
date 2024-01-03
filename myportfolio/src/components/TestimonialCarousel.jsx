@@ -26,8 +26,8 @@ export default function TestimonialCarousel() {
         <Carousel.Slide key={item.name}>
         <div  className={css(styles.textContainer)}>
             <div className={css(styles.textAreaContainer)}>
-                <Text size="md" fs={"italic"} c="black" ff="europa, sans-serif">{`"${item.testimony}"`}</Text>
-                <Text size="lg" c="black" ff="europa, sans-serif">{`- ${item.name}, ${item.role}`}</Text>
+                <Text size="md" fs={"italic"} c="white" ff="europa, sans-serif">{`"${item.testimony}"`}</Text>
+                <Text size="lg" c="white" ff="europa, sans-serif">{`- ${item.name}, ${item.role}`}</Text>
             </div>
         </div>
         </Carousel.Slide>

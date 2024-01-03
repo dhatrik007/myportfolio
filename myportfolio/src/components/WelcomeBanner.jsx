@@ -22,7 +22,7 @@ export default function WelcomeBanner() {
                 </div>
             </div>
             <div className={css(styles.deviceContainer)}>
-                <img alt="device"/>
+                <img src="../assets/laptop.png" alt="device"/>
             </div>
         </Flex>
     )
@@ -37,11 +37,12 @@ const styles = StyleSheet.create({
     },
     visitorContainer: {
         padding: "32px",
+        overflow:"hidden"
     },
     summaryContainer: {
         display: "flex",
         paddingBottom: "32px",
-        width: "100%"
+        width: "100%",
     },
     deviceContainer: {
         display:"flex",
