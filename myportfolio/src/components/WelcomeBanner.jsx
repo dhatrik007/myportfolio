@@ -1,6 +1,5 @@
 import React from "react"
 import { StyleSheet, css } from "aphrodite";
-import Subject from "../assets/Subject.png"
 import { Flex, Text } from "@mantine/core";
 export default function WelcomeBanner() {
 
@@ -10,7 +9,7 @@ export default function WelcomeBanner() {
     return (
         <Flex justify="space-around" align={"flex-end"}>
             <div className={css(styles.imageContainer)}>
-                <img src={Subject} alt="profileImage"/>
+                <img src="../assets/propic.png" alt="profileImage"/>
             </div>
             <div className={css(styles.visitorContainer)}>
                 <div className={css(styles.summaryContainer)} align="justify">

@@ -9,6 +9,7 @@ import Typewriter from "typewriter-effect";
 import TestimonialCarousel from "./TestimonialCarousel";
 import SkillsCardContainer from "./SkillCardContainer";
 import Header from "./Header";
+import Footer from "./Footer";
 import GetInTouchSimple from "./GetInTouchSimple";
 
 
@@ -107,6 +108,7 @@ export default function ProfileLandinginterface() {
             <div className={css(styles.contactForm)}>
                 <GetInTouchSimple/>
             </div>
+            <Footer/>
         </div>
     )
 }
@@ -119,7 +121,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         alignItems:"center",
         backgroundImage: `url("../assets/bg.jpg")`,
-        backgroundPosition: "center"
+        backgroundPosition: "center",
+        backgroundSize: "cover"
     },
     headerContainer: {
         minHeight: "200px",

@@ -1,10 +1,10 @@
 import { Anchor, Button, Flex, Grid, Container } from "@mantine/core";
-import { IconBrandGithub, IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandGithub, IconDownload, IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
 import { StyleSheet, css } from "aphrodite";
 
 const links = [
-  { link: '/', label: 'Home', color:"blue" },
-  { link: '/pricing', label: 'Resume', color: "green" },
+  { link: '/', label: 'Home', color:"#ffff85" },
+  { link: 'https://drive.google.com/uc?export=download&id=13US9Ecfh53nyGqrvK7X_vQhIeVR-Pbmj', label: 'Resume', color: "green", icon:<IconDownload/> },
   { link: 'https://github.com/dhatrik007', label: 'GitHub', color: "#ffffff", icon: <IconBrandGithub/> },
   { link: 'https://www.linkedin.com/in/ndhatrik/', label: 'LinkedIn', color: "blue", icon: <IconBrandLinkedin/> },
   { link: 'https://www.instagram.com/_nikhil.kumar.dhatrik_/', label: 'Instagram', color: "red", icon: <IconBrandInstagram/>},
