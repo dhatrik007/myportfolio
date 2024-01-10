@@ -36,10 +36,10 @@ export default function ProfileLandinginterface() {
         }
     }
     const deviceName = getDeviceType()
-    const frontendSkills = ["HTML5", "CSS3", "JavaScript", "ReactJS", "Typescript", "GraphQL", "Redux", "NextJS", "AngularJS", "React-native", "Vue", "Yarn", "Monorepo", "Bootstrap",]
-    const backendSkills = ["JAVA", "Kotlin", "Ruby on Rails", "python", "NodeJS", "ExpressJS", "Spring Boot", "REST"]
-    const databases = ["PostgreSQL", "MongoDB", "Nosql", "SQlite", "Redis"]
-    const devopsSkills = ["GIT", "Docker", "Jenkins", "IntelliJ", "Sentry", "Datadog", "Atlassian"]
+    const frontendSkills = ["HTML5", "CSS3", "JavaScript", "ReactJS", "Typescript", "GraphQL", "Redux", "NextJS", "AngularJS", "React-native", "Vue", "Yarn","Webpack", "Monorepo", "Bootstrap", "Ajax", "jQuery"]
+    const backendSkills = ["JAVA", "Kotlin", "Ruby on Rails", "python", "NodeJS", "AWS", "ExpressJS", "Spring Boot", "REST", "Kafka"]
+    const databases = ["PostgreSQL", "MongoDB", "Nosql","Mysql", "SQlite", "Redis", "Django"]
+    const devopsSkills = ["GIT", "Docker","Kubernetes", "Jenkins", "IntelliJ", "Sentry", "Datadog", "Atlassian", "JIRA", "Figma"]
     return (
         <div className={css(styles.mainContainer)}>
             <Header/>
