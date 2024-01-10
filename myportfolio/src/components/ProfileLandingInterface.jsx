@@ -14,8 +14,28 @@ import GetInTouchSimple from "./GetInTouchSimple";
 
 
 export default function ProfileLandinginterface() {
-    const visitorCount = 1;
-    const message = `Hello visitor #${visitorCount}!`;
+    const getDeviceType = () => {
+        const userAgent = navigator.userAgent;
+
+        if (userAgent.match(/Android/i)) {
+        return 'Android';
+        } else if (userAgent.match(/iPhone|iPad|iPod/i)) {
+            return 'iOS';
+        } else if (userAgent.match(/Windows Phone/i)) {
+            return 'Windows Phone';
+        } else if (userAgent.match(/Windows NT/i) && userAgent.match(/arm/i)) {
+            return 'Windows RT';
+        } else if (userAgent.match(/Macintosh/i) && 'ontouchend' in document) {
+            return 'Mac with Touch Screen';
+        } else if (userAgent.match(/Macintosh/i)) {
+            return 'Mac';
+        } else if (userAgent.match(/Windows/i)) {
+            return 'Windows';
+        } else {
+            return 'Unknown';
+        }
+    }
+    const deviceName = getDeviceType()
     const frontendSkills = ["HTML5", "CSS3", "JavaScript", "ReactJS", "Typescript", "GraphQL", "Redux", "NextJS", "AngularJS", "React-native", "Vue", "Yarn", "Monorepo", "Bootstrap",]
     const backendSkills = ["JAVA", "Kotlin", "Ruby on Rails", "python", "NodeJS", "ExpressJS", "Spring Boot", "REST"]
     const databases = ["PostgreSQL", "MongoDB", "Nosql", "SQlite", "Redis"]
@@ -26,7 +46,7 @@ export default function ProfileLandinginterface() {
             <div className={css(styles.headerContainer)}>
                 <div align="left"><Typewriter onInit={(obj) => {
                         obj
-                            .typeString(message)
+                            .typeString(`Hello ${deviceName} user!`)
                             .pauseFor(3000)
                             .deleteAll()
                             .typeString("How are you doing!")
@@ -146,7 +166,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        background: "#ffff85",
+        background: "#ddf0c7",
         borderRadius: "50px 50px 0px 0px",
     },
     contactForm: {
@@ -157,7 +177,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        background: "#ffff85",
+        background: "#ddf0c7",
         borderRadius: "50px 50px 0px 0px",
     },
     skillsCardContainer: {
@@ -166,7 +186,7 @@ const styles = StyleSheet.create({
     },
     welcomeContainer: {
         display: "flex",
-        background: "#ffff85",
+        background: "#ddf0c7",
         minHeight: "500px",
         width: "100%",
         borderRadius: "50px 50px 0px 0px",

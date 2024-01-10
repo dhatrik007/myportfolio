@@ -5,7 +5,7 @@ type Props = {
     data: string[]
 }
 export default function SkillsCardContainer(props: Props) {
-    const skills = props.data.map((skillName) => <Button variant="outline" size="compact-xs" color="black">{skillName}</Button>)
+    const skills = props.data.map((skillName) => <Button key={skillName} variant="outline" size="compact-xs" color="black">{skillName}</Button>)
     return (
         <Flex direction={"column"} gap={18}>
             <Text c="black" fw={"bold"}>{props.header}</Text>
