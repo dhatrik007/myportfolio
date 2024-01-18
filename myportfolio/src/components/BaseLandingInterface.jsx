@@ -14,7 +14,10 @@ export default function BaseLandingInterface() {
                     <Button size="xl" rightSection={<IconDownload size={24} />} variant="gradient">Download Resume</Button>
                 </Anchor>
                 <Anchor href="/pseditor" >
-                    <Button size="xl" rightSection={<IconArrowRight size={24} />} variant="outline">Predict Spring Visual Editor</Button>
+                    <Button size="xl" rightSection={<IconArrowRight size={24} />} variant="outline">Predict Spring Visual Editor (WIP - Image Collage Editor)</Button>
+                </Anchor>
+                <Anchor href="https://buddy-text-dhatrik.netlify.app/">
+                    <Button size="xl" rightSection={<IconArrowRight size={24} />} variant="outline">BuddyText - A messaging platform.</Button>
                 </Anchor>
             </Flex>
         </div>
